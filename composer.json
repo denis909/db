@@ -1,9 +1,9 @@
 {
-    "name": "denis909/micro-db",
+    "name": "denis909/db",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "denis909\\micro\\": ""
+            "denis909\\db\\": ""
         }
     }
 }
