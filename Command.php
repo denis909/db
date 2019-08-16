@@ -51,7 +51,11 @@ class Command
             {
                 $sql .= '`' . $key . '` = ';
 
-                if (Expression::isSubclassOf($value))
+                if ($value === null)
+                {
+                    $sql .= 'NULL';
+                }
+                elseif (Expression::isExpression($value))
                 {
                     $sql .= $value->getSql();
                 }

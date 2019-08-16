@@ -26,18 +26,20 @@ class Expression
         return $this->_sql;
     }
 
-    public static function instanceOf($object)
+    public static function isExpression($object)
     {
+        $class = Expression::class;
+
         if (is_object($object))
         {
-            if ($object instanceof Expression::class)
+            if ($object instanceof $class)
             {
                 return true;
             }
         }
         elseif (is_string($object))
         {
-            return is_subclass_of($object, Expression::class, true);
+            return is_subclass_of($object, $class, true);
         }
 
         return false;
