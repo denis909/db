@@ -30,14 +30,14 @@ class Expression
     {
         if (is_object($object))
         {
-            if ($object instanceof self::class)
+            if ($object instanceof __CLASS__)
             {
                 return true;
             }
         }
         elseif (is_string($object))
         {
-            return is_subclass_of($object, self::class, true);
+            return is_subclass_of($object, __CLASS__, true);
         }
 
         return false;
