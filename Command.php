@@ -51,7 +51,7 @@ class Command
             {
                 $sql .= '`' . $key . '` = ';
 
-                if (DbExpression::isSubclassOf($value))
+                if (Expression::isSubclassOf($value))
                 {
                     $sql .= $value->getSql();
                 }
@@ -171,7 +171,7 @@ class Command
 
         if (strpos($from, "`") !== false)
         {
-            throw new Exception("Bad table name: " . $from);
+            throw new DbException("Bad table name: " . $from);
         }
 
         return "`" . $from . "`";
