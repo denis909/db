@@ -1,6 +1,6 @@
 <?php
 /**
- * @package DB
+ * @package Db
  * @license MIT License
  * @link    http://denis909.spb.ru
  */
@@ -30,14 +30,14 @@ class Expression
     {
         if (is_object($object))
         {
-            if ($object instanceof __CLASS__)
+            if ($object instanceof Expression::class)
             {
                 return true;
             }
         }
         elseif (is_string($object))
         {
-            return is_subclass_of($object, __CLASS__, true);
+            return is_subclass_of($object, Expression::class, true);
         }
 
         return false;

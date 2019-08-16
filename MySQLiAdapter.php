@@ -1,6 +1,6 @@
 <?php
 /**
- * @package DB
+ * @package Db
  * @license MIT License
  * @link    http://denis909.spb.ru
  */
