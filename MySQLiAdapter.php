@@ -61,7 +61,11 @@ class MySQLiAdapter implements AdapterInterface
     {
         $result = $this->query($sql);
 
-        return mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $return = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        mysqli_free_result($result);
+
+        return $return;
     }
 
     public function queryAll($sql)
@@ -76,6 +80,8 @@ class MySQLiAdapter implements AdapterInterface
         {
             $return[] = $row;
         }
+
+        mysqli_free_result($result);
 
         return $return;
     }
