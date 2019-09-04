@@ -55,7 +55,7 @@ class Command
                 {
                     $sql .= 'NULL';
                 }
-                elseif($value instanceof DbExpression::class)
+                elseif($value instanceof DbExpression)
                 {
                     $sql .= $value->getSql();
                 }
