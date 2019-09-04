@@ -51,11 +51,11 @@ class Command
             {
                 $sql .= '`' . $key . '` = ';
 
-                if ($value === null)
+                if($value === null)
                 {
                     $sql .= 'NULL';
                 }
-                elseif (Expression::isExpression($value))
+                elseif($value instanceof DbExpression::class)
                 {
                     $sql .= $value->getSql();
                 }
@@ -90,7 +90,7 @@ class Command
     {
         $sql = 'UPDATE ' .  $this->table($table) . ' SET ' . $this->values($values);
 
-        if ($where)
+        if($where)
         {
             $sql .= ' WHERE ' . $this->where($where, $params);
         }
