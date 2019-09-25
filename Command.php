@@ -107,6 +107,13 @@ class Command
         return $sql;
     }
 
+    public function replace($table, $values = [])
+    {
+        $sql = 'REPLACE INTO ' . $this->table($table) . ' SET ' . $this->values($values) . ';';
+
+        return $sql;
+    }
+
     public function delete($table, $where, $params = [])
     {
         $sql = "DELETE FROM " . $this->table($table);

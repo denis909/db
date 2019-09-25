@@ -143,6 +143,22 @@ class Db
         return $this->insertId();
     }
 
+    public function replace($table, $values = [])
+    {
+        $command = $this->createCommand();
+
+        $sql = $command->replace($table, $values);
+    
+        $result = $this->query($sql);
+
+        if (!$result)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     public function update($table, $values, $where, $params = [])
     {
         $command = $this->createCommand();
