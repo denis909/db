@@ -1,8 +1,7 @@
 <?php
 /**
- * @package Db
- * @license MIT License
- * @link    http://denis909.spb.ru
+ * @author denis909
+ * @license MIT
  */
 namespace denis909\db;
 

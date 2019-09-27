@@ -5,5 +5,8 @@
         "psr-4": {
             "denis909\\db\\": ""
         }
+    },
+    "require": {
+        "denis909/array-object": "dev-master"
     }
 }
