@@ -16,19 +16,10 @@ class Config
 
     public $db;
 
-    public $charset;
+    public $charset = 'utf8';
 
-    public function __construct($host = null, $user = null, $password = null, $db = null, $charset = 'utf8')
-    {
-        $this->host = $host;
-
-        $this->user = $user;
-
-        $this->password = $password;
-
-        $this->db = $db;
-        
-        $this->charset = $charset;        
+    public function __construct()
+    {        
     }
 
 }
