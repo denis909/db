@@ -5,7 +5,7 @@
  */
 namespace denis909\db;
 
-class DbConfig
+class Config
 {
 
     public $host;

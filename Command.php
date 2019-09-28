@@ -5,8 +5,6 @@
  */
 namespace denis909\db;
 
-use Exception;
-
 class Command
 {
 
@@ -54,7 +52,7 @@ class Command
                 {
                     $sql .= 'NULL';
                 }
-                elseif($value instanceof DbExpression)
+                elseif($value instanceof Expression)
                 {
                     $sql .= $value->getSql();
                 }
@@ -181,7 +179,7 @@ class Command
 
         if (strpos($from, "`") !== false)
         {
-            throw new DbException("Bad table name: " . $from);
+            throw new Exception("Bad table name: " . $from);
         }
 
         return "`" . $from . "`";
