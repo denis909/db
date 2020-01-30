@@ -22,6 +22,22 @@ class Command
         return $this->_db;
     }
 
+    public function escapeValue($value)
+    {
+        if($value === null)
+        {
+            return 'NULL';
+        }
+        elseif($value instanceof DbExpression)
+        {
+            return $value->getSql();
+        }
+        else
+        {
+            return "'" . $this->getDb()->escape($value) . "'";
+        }
+    }
+
     public function values($values, $isWhere = false)
     {
         if ($isWhere)
@@ -48,20 +64,7 @@ class Command
             }
             else
             {
-                $sql .= '`' . $key . '` = ';
-
-                if($value === null)
-                {
-                    $sql .= 'NULL';
-                }
-                elseif($value instanceof DbExpression)
-                {
-                    $sql .= $value->getSql();
-                }
-                else
-                {
-                    $sql .= "'" . $this->getDb()->escape($value) . "'";
-                }
+                $sql .= '`' . $key . '` = ' . $this->escapeValue($value);
             }
         }
 
@@ -76,9 +79,9 @@ class Command
         }
         else
         {
-            if ($params === null)
+            foreach($params as $key => $value)
             {
-                return $where;
+                $params[$key] = $this->escapeValue($value);
             }
 
             return strtr($where, $params);
