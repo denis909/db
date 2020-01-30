@@ -5,8 +5,6 @@
  */
 namespace denis909\db;
 
-use Exception;
-
 class Command
 {
 
@@ -184,7 +182,7 @@ class Command
 
         if (strpos($from, "`") !== false)
         {
-            throw new DbException("Bad table name: " . $from);
+            throw new Exception("Bad table name: " . $from);
         }
 
         return "`" . $from . "`";

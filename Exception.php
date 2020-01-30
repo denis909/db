@@ -5,8 +5,6 @@
  */
 namespace denis909\db;
 
-use Exception;
-
-class DbException extends Exception
+class Exception extends \Exception
 {
 }

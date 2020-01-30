@@ -5,8 +5,6 @@
  */
 namespace denis909\db;
 
-use denis909\ArrayObject\ArrayObject;
-
-class Row extends ArrayObject
+class Row extends \denis909\ArrayObject\ArrayObject
 {
 }

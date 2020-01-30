@@ -5,7 +5,7 @@
  */
 namespace denis909\db;
 
-class DbExpression
+class Expression
 {
 
     protected $_sql;
