@@ -18,8 +18,32 @@ class Config
 
     public $charset = 'utf8';
 
-    public function __construct()
-    {        
+    public function __construct($host = null, $user = null, $password = null, $db = null, $charset = null)
+    {
+        if ($host)
+        {
+            $this->host = $host;
+        }
+
+        if ($user)
+        {
+            $this->user = $user;
+        }
+
+        if ($password)
+        {
+            $this->password = $password;
+        }
+
+        if ($db)
+        {
+            $this->db = $db;
+        }
+
+        if ($charset)
+        {
+            $this->charset = $charset;
+        }
     }
 
 }
