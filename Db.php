@@ -95,7 +95,7 @@ class Db
     {
         foreach($params as $key => $value)
         {
-            if ($value instanceof DbExpression)
+            if ($value instanceof Expression)
             {
                 $params[$key] = $value->getSql();
             }

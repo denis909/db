@@ -26,7 +26,7 @@ class Command
         {
             return 'NULL';
         }
-        elseif($value instanceof DbExpression)
+        elseif($value instanceof Expression)
         {
             return $value->getSql();
         }
