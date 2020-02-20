@@ -35,6 +35,11 @@ class Db
         return $this->getAdapter()->query($sql);
     }
 
+    public function multiQuery($sql, $params = [])
+    {
+        return $this->getAdapter()->multiQuery($sql);
+    }
+
     public function insertId()
     {
         return $this->getAdapter()->insertId();
