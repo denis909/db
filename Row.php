@@ -1,10 +1,12 @@
 <?php
 /**
- * @author denis909
+ * @author denis909 <mail@denis909.spb.ru>
  * @license MIT
  */
-namespace denis909\db;
+namespace Denis909\Db;
 
-class Row extends \denis909\ArrayObject\ArrayObject
+use Denis909\ArrayObject\ArrayObject;
+
+class Row extends ArrayObject
 {
 }

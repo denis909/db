@@ -1,9 +1,9 @@
 <?php
 /**
- * @author denis909
+ * @author denis909 <mail@denis909.spb.ru>
  * @license MIT
  */
-namespace denis909\db;
+namespace Denis909\Db;
 
 class Db
 {
