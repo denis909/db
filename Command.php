@@ -36,7 +36,7 @@ class Command
         }
     }
 
-    public function values($values, $isWhere = false)
+    public function values($values, bool $isWhere = false) : string
     {
         if ($isWhere)
         {
@@ -86,11 +86,13 @@ class Command
         }
     }
 
-    public function update($table, $values, $where, $params = [])
+    public function update($table, Row $values, $where, $params = [])
     {
-        $sql = 'UPDATE ' .  $this->table($table) . ' SET ' . $this->values($values);
+        $values_string = $this->values($values);
 
-        if($where)
+        $sql = 'UPDATE ' .  $this->table($table) . ' SET ' . $values_string;
+
+        if ($where)
         {
             $sql .= ' WHERE ' . $this->where($where, $params);
         }

@@ -5,8 +5,12 @@
  */
 namespace Denis909\Db;
 
-use Denis909\ArrayObject\ArrayObject;
-
-class Row extends ArrayObject
+class Row extends \ArrayObject
 {
+
+    public function __construct($input = [], int $flags = self::ARRAY_AS_PROPS, string $iterator_class = "ArrayIterator")
+    {
+        parent::__construct($input, $flags, $iterator_class);
+    }
+
 }

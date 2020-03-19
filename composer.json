@@ -5,8 +5,5 @@
         "psr-4": {
             "Denis909\\Db\\": ""
         }
-    },
-    "require": {
-        "denis909/php-array-object": "*"
     }
 }

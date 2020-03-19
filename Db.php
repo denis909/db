@@ -30,12 +30,21 @@ class Db
         return new Command($this);
     }
 
-    public function query($sql, $params = [])
+    public function query($sql)
     {
-        return $this->getAdapter()->query($sql);
+        try
+        {
+            return $this->getAdapter()->query($sql);
+        }
+        catch(Exception $e)
+        {
+            $e->setMessage($e->getMessage() . PHP_EOL . PHP_EOL . $sql);
+
+            throw $e;
+        }
     }
 
-    public function multiQuery($sql, $params = [])
+    public function multiQuery($sql)
     {
         return $this->getAdapter()->multiQuery($sql);
     }
@@ -163,7 +172,7 @@ class Db
         return true;
     }
 
-    public function update($table, $values, $where, $params = [])
+    public function update(string $table, Row $values, $where, $params = [])
     {
         $command = $this->createCommand();
 
