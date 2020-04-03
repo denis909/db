@@ -172,7 +172,7 @@ class Db
         return true;
     }
 
-    public function update(string $table, Row $values, $where, $params = [])
+    public function update(string $table, $values, $where, $params = [])
     {
         $command = $this->createCommand();
 

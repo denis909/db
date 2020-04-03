@@ -86,7 +86,7 @@ class Command
         }
     }
 
-    public function update($table, Row $values, $where, $params = [])
+    public function update($table, $values, $where, $params = [])
     {
         $values_string = $this->values($values);
 
